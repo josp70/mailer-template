@@ -1,0 +1,21 @@
+{
+  "name": "mailer-template",
+  "version": "0.0.0",
+  "description": "Basic module to send mail based on mustache template",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "mailer",
+    "template",
+    "mustache"
+  ],
+  "author": "Jorge Suit <josp.jorge@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "html-to-text": "^3.3.0",
+    "mustache": "^2.3.0",
+    "nodemailer": "^4.4.0"
+  }
+}
