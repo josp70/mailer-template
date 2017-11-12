@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josp70/mailer-template.git"
+  },
   "keywords": [
     "mailer",
     "template",
