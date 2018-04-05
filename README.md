@@ -1,6 +1,6 @@
 mailer-template
 =========
-
+![build status](https://gitlab.com/jorge.suit/mailer-template/badges/master/build.svg)
 Basic node module to send mails based on templates. It depends on
 nodemailer to stablish connection with the mail server and mustache to
 render the mail body from the template.
@@ -91,3 +91,5 @@ TBD
 In lieu of a formal style guide, take care to maintain the existing
 coding style. Add unit tests for any new or changed
 functionality. Lint and test your code.
+
+
