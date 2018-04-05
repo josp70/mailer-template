@@ -4,7 +4,7 @@
   "description": "Basic module to send mail based on mustache template",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 10000 test/*.js",
+    "test": "mocha --timeout 15000 test/*.js",
     "lint": "eslint --version && eslint index.js examples/** test/**"
   },
   "repository": {
