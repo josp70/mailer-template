@@ -1,6 +1,6 @@
 {
   "name": "mailer-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Basic module to send mail based on mustache template",
   "main": "index.js",
   "scripts": {
