@@ -48,23 +48,35 @@ The code for `use_mailer.js` is:
 const mailer = require('mailer-template');
 const path = require('path');
 
-mailer.connect({
-    sender: 'sender@gmail.com',
-    dirTemplates: path.join(__dirname, 'templates/mail'),
-    templates: ['confirm-register', 'confirm-password']
-}).then(_=>{
-    return mailer.sendMail('josp.jorge@gmail.com', 'confirm-register', {
-	href: 'https://site.domain.com/service?token=1234',
-	userName: 'Name'
-    })
-}).then(infoSend => {
+let connOptions = {
+  sender: 'sender@gmail.com',
+  dirTemplates: path.join(__dirname, 'templates/mail'),
+  templates: [
+    'confirm-register',
+    'confirm-password'
+  ]
+};
+
+if (process.env.MAIL_SERVICE) {
+  connOptions = Object.assign(connOptions, {
+    service: process.env.MAIL_SERVICE,
+    user: process.env.MAIL_USER,
+    password: process.env.MAIL_PASSWORD
+  });
+}
+mailer.connect(connOptions)
+  .then(() => mailer.sendMail('user@gmail.com', 'confirm-register', {
+    href: 'https://site.domain.com/service?token=1234',
+    userName: 'Name Perico'
+  }))
+  .then((infoSend) => {
     console.log('Preview URL: %s', mailer.getTestMessageUrl(infoSend));
     console.log('Body HTML =>');
     console.log(infoSend.message.html);
-});
+  });
 ```
 
-Following is the contents of the template files for `confirm-register`
+Following are the content of the template files for `confirm-register`
 
 #### confirm-register.json
 ---
@@ -83,9 +95,15 @@ Following is the contents of the template files for `confirm-register`
 <p>Please confirm your account at <a class=activate href="{{href}}">activate</a></p>
 ```
 
-## Tests
+## Tests & lint
 
-TBD
+```
+npm run lint
+```
+
+```
+npm test
+```
 
 ## Contributing
 
