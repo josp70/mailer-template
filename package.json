@@ -19,9 +19,9 @@
   "author": "Jorge Suit <josp.jorge@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "html-to-text": "^3.3.0",
+    "html-to-text": "^4.0.0",
     "mustache": "^2.3.0",
-    "nodemailer": "^4.4.0"
+    "nodemailer": "^4.6.4"
   },
   "devDependencies": {
     "chai": "^4.1.2",
